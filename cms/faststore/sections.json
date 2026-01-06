@@ -1,0 +1,275 @@
+[
+    {
+        "name": "MessageComponent",
+        "schema": {
+            "title": "Message Component",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "Name"
+                },
+                "container": {
+                    "type": "string",
+                    "title": "Container"
+                },
+                "message": {
+                    "type": "object",
+                    "title": "Message",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "title": "Name"
+                        },
+                        "content": {
+                            "type": "string",
+                            "title": "Content"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "name": "BannerComponent",
+        "schema": {
+            "title": "Banner Component",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "Name"
+                },
+                "container": {
+                    "type": "string",
+                    "title": "Container"
+                },
+                "media": {
+                    "type": "object",
+                    "title": "Media",
+                    "properties": {
+                        "mobile": {
+                            "type": "object",
+                            "title": "Mobile Image",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "altText": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "widget": {
+                                        "ui:widget": "image-uploader"
+                                    }
+                                }
+                            }
+                        },
+                        "tablet": {
+                            "type": "object",
+                            "title": "Tablet Image",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "altText": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "widget": {
+                                        "ui:widget": "image-uploader"
+                                    }
+                                }
+                            }
+                        },
+                        "desktop": {
+                            "type": "object",
+                            "title": "Desktop Image",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "altText": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "widget": {
+                                        "ui:widget": "image-uploader"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "text": {
+                    "type": "object",
+                    "title": "Text",
+                    "properties": {
+                        "headline": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "text": {
+                            "type": "string"
+                        },
+                        "cta": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "urlLink": {
+                    "type": "string",
+                    "title": "URL Link"
+                },
+                "openInNewTab": {
+                    "type": "boolean",
+                    "title": "Open in new tab"
+                }
+            }
+        }
+    },
+    {
+        "name": "SliderComponent",
+        "schema": {
+            "title": "Slider Component",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "Name"
+                },
+                "container": {
+                    "type": "string",
+                    "title": "Container"
+                },
+                "viewMode": {
+                    "type": "string",
+                    "title": "View Mode",
+                    "enum": [
+                        "slider"
+                    ],
+                    "default": "slider"
+                },
+                "banners": {
+                    "type": "array",
+                    "title": "Banners",
+                    "items": {
+                        "type": "object",
+                        "title": "Banner",
+                        "properties": {
+                            "media": {
+                                "type": "object",
+                                "title": "Media",
+                                "properties": {
+                                    "mobile": {
+                                        "type": "object",
+                                        "title": "Mobile Image",
+                                        "properties": {
+                                            "code": {
+                                                "type": "string"
+                                            },
+                                            "mime": {
+                                                "type": "string"
+                                            },
+                                            "altText": {
+                                                "type": "string"
+                                            },
+                                            "url": {
+                                                "type": "string",
+                                                "widget": {
+                                                    "ui:widget": "image-uploader"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "tablet": {
+                                        "type": "object",
+                                        "title": "Tablet Image",
+                                        "properties": {
+                                            "code": {
+                                                "type": "string"
+                                            },
+                                            "mime": {
+                                                "type": "string"
+                                            },
+                                            "altText": {
+                                                "type": "string"
+                                            },
+                                            "url": {
+                                                "type": "string",
+                                                "widget": {
+                                                    "ui:widget": "image-uploader"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "desktop": {
+                                        "type": "object",
+                                        "title": "Desktop Image",
+                                        "properties": {
+                                            "code": {
+                                                "type": "string"
+                                            },
+                                            "mime": {
+                                                "type": "string"
+                                            },
+                                            "altText": {
+                                                "type": "string"
+                                            },
+                                            "url": {
+                                                "type": "string",
+                                                "widget": {
+                                                    "ui:widget": "image-uploader"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "text": {
+                                "type": "object",
+                                "title": "Text",
+                                "properties": {
+                                    "headline": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "cta": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "urlLink": {
+                                "type": "string",
+                                "title": "URL Link"
+                            },
+                            "openInNewTab": {
+                                "type": "boolean",
+                                "title": "Open in new tab"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]

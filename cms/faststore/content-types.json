@@ -1,0 +1,148 @@
+[
+    {
+        "id": "home",
+        "name": "Home Page",
+        "isSingleton": true,
+        "configurationSchemaSets": [
+            {
+                "name": "Settings",
+                "configurations": [
+                    {
+                        "name": "seo",
+                        "schema": {
+                            "title": "SEO",
+                            "description": "Search Engine Optimization options",
+                            "type": "object",
+                            "widget": {
+                                "ui:ObjectFieldTemplate": "GoogleSeoPreview"
+                            },
+                            "required": [
+                                "slug",
+                                "title",
+                                "description"
+                            ],
+                            "properties": {
+                                "slug": {
+                                    "title": "Path",
+                                    "type": "string",
+                                    "default": "/"
+                                },
+                                "title": {
+                                    "title": "Default page title",
+                                    "description": "Display this title when no other tile is available",
+                                    "type": "string",
+                                    "default": "FastStore Starter"
+                                },
+                                "description": {
+                                    "title": "Meta tag description",
+                                    "type": "string",
+                                    "default": "A beautifully designed store"
+                                },
+                                "canonical": {
+                                    "title": "Canonical url for the page",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "title": "Name",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "plp",
+        "name": "Product List Page",
+        "configurationSchemaSets": [
+            {
+                "name": "Settings",
+                "configurations": [
+                    {
+                        "name": "template",
+                        "schema": {
+                            "title": "Template",
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "title": "PLP template value (e.g. Slug: /department/category/subcategory)",
+                                    "type": "string",
+                                    "description": "PLP slug template (e.g. /office or /office/chairs) representing the /department/category/subcategory template). If this field is left empty, the generic PLP template will be applied."
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "categoryId",
+                        "schema": {
+                            "title": "Category Identifier",
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "title": "Category Identifier on VTEX",
+                                    "type": "string",
+                                    "description": "Category Identifier on VTEX (e.g. 4) representing the category"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "gwxId",
+                        "schema": {
+                            "title": "GWX Category Identifier",
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "title": "Category Identifier on GWX",
+                                    "type": "string",
+                                    "description": "Category Identifier on GWX (e.g. mbr-100) representing the category"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "pdp",
+        "name": "Product Detail Page",
+        "configurationSchemaSets": [
+            {
+                "name": "Settings",
+                "configurations": [
+                    {
+                        "name": "productId",
+                        "schema": {
+                            "title": "Product Identifier",
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "title": "Product Identifier on VTEX",
+                                    "type": "string",
+                                    "description": "Product Identifier on VTEX (e.g. 470) representing the product"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "gwxId",
+                        "schema": {
+                            "title": "GWX Product Identifier",
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "title": "Product Identifier on GWX",
+                                    "type": "string",
+                                    "description": "Product Identifier on GWX (e.g. mbr-100) representing the product"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
