@@ -1155,10 +1155,10 @@
   dependencies:
     fast-deep-equal "^3.1.3"
 
-"@faststore/api@3.96.0":
-  version "3.96.0"
-  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-3.96.0.tgz#3566df0733025b9ff647cfa7c4dfa93cda50eeab"
-  integrity sha512-vDLocEb9hEILO3j1VZq2aKXX4DmLA6R3zhEyE06HsvZYZbd/+MwLdjKiCy3ypxqPJ8RMsxbg/a7aZZ5ePKw9mA==
+"@faststore/api@3.96.1":
+  version "3.96.1"
+  resolved "https://registry.yarnpkg.com/@faststore/api/-/api-3.96.1.tgz#3c54865f8244d3b7fda749ab6b80abecfe65720a"
+  integrity sha512-6WngaKINXXEQM63R76LooSySXL36W1uFvr2Od6CkUtB5xY8BuJ2oEWZKuRSkbghlllSH04DfxyaUoEAxtzWcCg==
   dependencies:
     "@graphql-tools/load-files" "^7.0.0"
     "@graphql-tools/schema" "^9.0.0"
@@ -1171,13 +1171,13 @@
     p-limit "^3.1.0"
     sanitize-html "^2.11.0"
 
-"@faststore/cli@3.96.0":
-  version "3.96.0"
-  resolved "https://registry.yarnpkg.com/@faststore/cli/-/cli-3.96.0.tgz#3b1ba19c30df10b41298783042814e5aa762625b"
-  integrity sha512-o6q7aIsEy5pb9PxToTiAp8pY1BK9lMLolzUs3wKFTkxVCJ1xNsR7A4csYItVn1MKZvWuObftlvIQx92mKYNkjA==
+"@faststore/cli@3.96.1":
+  version "3.96.1"
+  resolved "https://registry.yarnpkg.com/@faststore/cli/-/cli-3.96.1.tgz#c909b312b6652904de6dc26a35adfaf0618c4601"
+  integrity sha512-SjLQJ8KbdUm5vbvyEUsLyT2gxlzgsv89Y6wPIJ+5iLto+UBxHH8Uk9cAqpDFPp+NFotiaXUoKsqk+rEvGIKexA==
   dependencies:
     "@antfu/ni" "^0.21.12"
-    "@faststore/core" "^3.96.0"
+    "@faststore/core" "^3.96.1"
     "@inquirer/prompts" "^5.1.2"
     "@oclif/core" "^1.16.4"
     "@oclif/plugin-help" "^5"
@@ -1199,10 +1199,10 @@
     react-swipeable "^7.0.0"
     tabbable "^5.2.1"
 
-"@faststore/core@^3.96.0":
-  version "3.96.0"
-  resolved "https://registry.yarnpkg.com/@faststore/core/-/core-3.96.0.tgz#21f5137842eff80b388158014cdc1d95768e9344"
-  integrity sha512-u1XecmUGdDAsaK9Mg/OJmWF6BkngFMxEy27n5xfJdS0w3YrnXs34jZ6QbFp55b66eO7nuZGkvSHiSEsrMmaveQ==
+"@faststore/core@^3.96.1":
+  version "3.96.1"
+  resolved "https://registry.yarnpkg.com/@faststore/core/-/core-3.96.1.tgz#0037aaab422d54ad16e9b3373ac8044552d64a22"
+  integrity sha512-4FOG9/6XuUinVg0qfacqscf1KywyB9fLkmdL3qPQz4f4WAQakgWBlTOcbZiJNj4eU7rTbXxx8Pez6g3uVe+b2A==
   dependencies:
     "@antfu/ni" "^0.21.12"
     "@builder.io/partytown" "^0.6.1"
@@ -1210,7 +1210,7 @@
     "@envelop/graphql-jit" "^8.0.3"
     "@envelop/parser-cache" "^6.0.2"
     "@envelop/validation-cache" "^6.0.2"
-    "@faststore/api" "3.96.0"
+    "@faststore/api" "3.96.1"
     "@faststore/graphql-utils" "^3.96.0"
     "@faststore/lighthouse" "3.96.0"
     "@faststore/sdk" "3.96.0"
