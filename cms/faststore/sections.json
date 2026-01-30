@@ -1,275 +1,438 @@
 [
-    {
-        "name": "MessageComponent",
-        "schema": {
-            "title": "Message Component",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "title": "Name"
-                },
-                "container": {
-                    "type": "string",
-                    "title": "Container"
-                },
-                "message": {
-                    "type": "object",
-                    "title": "Message",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "title": "Name"
-                        },
-                        "content": {
-                            "type": "string",
-                            "title": "Content"
-                        }
-                    }
-                }
+  {
+    "name": "MessageComponent",
+    "schema": {
+      "title": "Message Component",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "container": {
+          "type": "string",
+          "title": "Container"
+        },
+        "message": {
+          "type": "object",
+          "title": "Message",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "styling": {
+              "type": "string",
+              "title": "Styling",
+              "enum": ["INFO", "SUCCESS", "WARNING", "ERROR"],
+              "default": "INFO"
+            },
+            "content": {
+              "type": "string",
+              "title": "Content"
             }
+          }
         }
-    },
-    {
-        "name": "BannerComponent",
-        "schema": {
-            "title": "Banner Component",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "title": "Name"
+      }
+    }
+  },
+  {
+    "name": "AlertComponent",
+    "schema": {
+      "title": "Alert Component",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "container": {
+          "type": "string",
+          "title": "Container"
+        },
+        "message": {
+          "type": "object",
+          "title": "Message",
+          "properties": {
+            "styling": {
+              "type": "string",
+              "title": "Styling",
+              "enum": ["INFO", "SUCCESS", "WARNING", "ERROR"],
+              "default": "INFO"
+            },
+            "content": {
+              "type": "string",
+              "title": "Content"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "BannerComponent",
+    "schema": {
+      "title": "Banner Component",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "container": {
+          "type": "string",
+          "title": "Container"
+        },
+        "bannerPosition": {
+          "type": "string",
+          "title": "Banner Position",
+          "enum": ["LEFT", "RIGHT", "CENTER"],
+          "default": "LEFT"
+        },
+        "styling": {
+          "type": "string",
+          "title": "Styling",
+          "enum": [
+            "DARKBOXLIGHTTEXT",
+            "LIGHTBOXDARKTEXT",
+            "PRIMARYBOXLIGHTTEXT",
+            "PRIMARYBOXDARKTEXT"
+          ],
+          "default": "LIGHTBOXDARKTEXT"
+        },
+        "urlLink": {
+          "type": "string",
+          "title": "URL Link"
+        },
+        "openInNewTab": {
+          "type": "boolean",
+          "title": "Open in new tab"
+        },
+        "showBanner": {
+          "type": "boolean",
+          "title": "Show Banner"
+        },
+        "showText": {
+          "type": "boolean",
+          "title": "Show Text"
+        }
+      },
+      "dependencies": {
+        "showText": {
+          "oneOf": [
+            {
+              "properties": {
+                "showText": {
+                  "const": true
                 },
-                "container": {
-                    "type": "string",
-                    "title": "Container"
+                "text": {
+                  "type": "object",
+                  "title": "Text",
+                  "properties": {
+                    "headline": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "cta": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "showText": {
+                  "const": false
+                }
+              }
+            }
+          ]
+        },
+        "showBanner": {
+          "oneOf": [
+            {
+              "properties": {
+                "showBanner": {
+                  "const": true
                 },
                 "media": {
-                    "type": "object",
-                    "title": "Media",
+                  "type": "object",
+                  "title": "Media",
+                  "properties": {
+                    "mobile": {
+                      "type": "object",
+                      "title": "Mobile Image",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "altText": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string",
+                          "widget": {
+                            "ui:widget": "image-uploader"
+                          }
+                        }
+                      }
+                    },
+                    "tablet": {
+                      "type": "object",
+                      "title": "Tablet Image",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "altText": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string",
+                          "widget": {
+                            "ui:widget": "image-uploader"
+                          }
+                        }
+                      }
+                    },
+                    "desktop": {
+                      "type": "object",
+                      "title": "Desktop Image",
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "altText": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string",
+                          "widget": {
+                            "ui:widget": "image-uploader"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "showBanner": {
+                  "const": false
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "SliderComponent",
+    "schema": {
+      "title": "Slider Component",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "container": {
+          "type": "string",
+          "title": "Container"
+        },
+        "viewMode": {
+          "type": "string",
+          "title": "View Mode",
+          "enum": ["SLIDER", "INLINE"],
+          "default": "INLINE"
+        },
+        "banners": {
+          "type": "array",
+          "title": "Banners",
+          "items": {
+            "type": "object",
+            "title": "Banner",
+            "properties": {
+              "bannerPosition": {
+                "type": "string",
+                "title": "Banner Position",
+                "enum": ["LEFT", "RIGHT", "CENTER"],
+                "default": "LEFT"
+              },
+              "styling": {
+                "type": "string",
+                "title": "Styling",
+                "enum": [
+                  "DARKBOXLIGHTTEXT",
+                  "LIGHTBOXDARKTEXT",
+                  "PRIMARYBOXLIGHTTEXT",
+                  "PRIMARYBOXDARKTEXT"
+                ],
+                "default": "LIGHTBOXDARKTEXT"
+              },
+              "urlLink": {
+                "type": "string",
+                "title": "URL Link"
+              },
+              "openInNewTab": {
+                "type": "boolean",
+                "title": "Open in new tab"
+              },
+              "showBanner": {
+                "type": "boolean",
+                "title": "Show Banner"
+              },
+              "showText": {
+                "type": "boolean",
+                "title": "Show Text"
+              }
+            },
+            "dependencies": {
+              "showText": {
+                "oneOf": [
+                  {
                     "properties": {
-                        "mobile": {
+                      "showText": {
+                        "const": true
+                      },
+                      "text": {
+                        "type": "object",
+                        "title": "Text",
+                        "properties": {
+                          "headline": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "cta": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "properties": {
+                      "showText": {
+                        "const": false
+                      }
+                    }
+                  }
+                ]
+              },
+              "showBanner": {
+                "oneOf": [
+                  {
+                    "properties": {
+                      "showBanner": {
+                        "const": true
+                      },
+                      "media": {
+                        "type": "object",
+                        "title": "Media",
+                        "properties": {
+                          "mobile": {
                             "type": "object",
                             "title": "Mobile Image",
                             "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "mime": {
-                                    "type": "string"
-                                },
-                                "altText": {
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "widget": {
-                                        "ui:widget": "image-uploader"
-                                    }
+                              "code": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "altText": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string",
+                                "widget": {
+                                  "ui:widget": "image-uploader"
                                 }
+                              }
                             }
-                        },
-                        "tablet": {
+                          },
+                          "tablet": {
                             "type": "object",
                             "title": "Tablet Image",
                             "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "mime": {
-                                    "type": "string"
-                                },
-                                "altText": {
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "widget": {
-                                        "ui:widget": "image-uploader"
-                                    }
+                              "code": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "altText": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string",
+                                "widget": {
+                                  "ui:widget": "image-uploader"
                                 }
+                              }
                             }
-                        },
-                        "desktop": {
+                          },
+                          "desktop": {
                             "type": "object",
                             "title": "Desktop Image",
                             "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "mime": {
-                                    "type": "string"
-                                },
-                                "altText": {
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "widget": {
-                                        "ui:widget": "image-uploader"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "text": {
-                    "type": "object",
-                    "title": "Text",
-                    "properties": {
-                        "headline": {
-                            "type": "string"
-                        },
-                        "title": {
-                            "type": "string"
-                        },
-                        "text": {
-                            "type": "string"
-                        },
-                        "cta": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "urlLink": {
-                    "type": "string",
-                    "title": "URL Link"
-                },
-                "openInNewTab": {
-                    "type": "boolean",
-                    "title": "Open in new tab"
-                }
-            }
-        }
-    },
-    {
-        "name": "SliderComponent",
-        "schema": {
-            "title": "Slider Component",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "title": "Name"
-                },
-                "container": {
-                    "type": "string",
-                    "title": "Container"
-                },
-                "viewMode": {
-                    "type": "string",
-                    "title": "View Mode",
-                    "enum": [
-                        "slider"
-                    ],
-                    "default": "slider"
-                },
-                "banners": {
-                    "type": "array",
-                    "title": "Banners",
-                    "items": {
-                        "type": "object",
-                        "title": "Banner",
-                        "properties": {
-                            "media": {
-                                "type": "object",
-                                "title": "Media",
-                                "properties": {
-                                    "mobile": {
-                                        "type": "object",
-                                        "title": "Mobile Image",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "mime": {
-                                                "type": "string"
-                                            },
-                                            "altText": {
-                                                "type": "string"
-                                            },
-                                            "url": {
-                                                "type": "string",
-                                                "widget": {
-                                                    "ui:widget": "image-uploader"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "tablet": {
-                                        "type": "object",
-                                        "title": "Tablet Image",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "mime": {
-                                                "type": "string"
-                                            },
-                                            "altText": {
-                                                "type": "string"
-                                            },
-                                            "url": {
-                                                "type": "string",
-                                                "widget": {
-                                                    "ui:widget": "image-uploader"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "desktop": {
-                                        "type": "object",
-                                        "title": "Desktop Image",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "mime": {
-                                                "type": "string"
-                                            },
-                                            "altText": {
-                                                "type": "string"
-                                            },
-                                            "url": {
-                                                "type": "string",
-                                                "widget": {
-                                                    "ui:widget": "image-uploader"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "text": {
-                                "type": "object",
-                                "title": "Text",
-                                "properties": {
-                                    "headline": {
-                                        "type": "string"
-                                    },
-                                    "title": {
-                                        "type": "string"
-                                    },
-                                    "text": {
-                                        "type": "string"
-                                    },
-                                    "cta": {
-                                        "type": "string"
-                                    }
-                                }
-                            },
-                            "urlLink": {
+                              "code": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "altText": {
+                                "type": "string"
+                              },
+                              "url": {
                                 "type": "string",
-                                "title": "URL Link"
-                            },
-                            "openInNewTab": {
-                                "type": "boolean",
-                                "title": "Open in new tab"
+                                "widget": {
+                                  "ui:widget": "image-uploader"
+                                }
+                              }
                             }
+                          }
                         }
+                      }
                     }
-                }
+                  },
+                  {
+                    "properties": {
+                      "showBanner": {
+                        "const": false
+                      }
+                    }
+                  }
+                ]
+              }
             }
+          }
         }
+      }
     }
+  }
 ]
